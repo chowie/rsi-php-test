@@ -13,7 +13,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/contact"><i class="fas fa-at"></i> Contact</a>
             </li>
-            @foreach(['about','experience','education','skills','interests','awards'] as $navItem)
+            @foreach(['about','skills'] as $navItem)
                 @component('components.nav-item')
                     {{$navItem}}
                 @endcomponent
