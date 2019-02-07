@@ -14,3 +14,4 @@
 Route::get('/', 'ResumeController@show');
 
 Route::get('/contact', 'ContactFormController@show');
+Route::post('/contact', 'ContactFormController@save');

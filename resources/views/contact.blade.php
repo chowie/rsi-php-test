@@ -13,23 +13,26 @@
             <div class="col-lg-9 col-xs-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="form-group" id="contact-name">
-                            <label for="name">Name</label>
-                            <input name="name" id="name" class="form-control" type="text">
-                        </div>
+                        <form method="POST" action="/contact">
+                            @csrf
+                            <div class="form-group" id="contact-name">
+                                <label for="name">Name</label>
+                                <input name="name" id="name" class="form-control" type="text">
+                            </div>
 
-                        <div class="form-group" id="contact-email">
-                            <label for="name">Email Address</label>
-                            <input name="email" id="email" class="form-control" type="text">
-                        </div>
+                            <div class="form-group" id="contact-email">
+                                <label for="name">Email Address</label>
+                                <input name="email" id="email" class="form-control" type="text">
+                            </div>
 
-                        <div class="form-group" id="contact-message">
-                            <label for="name">Message</label>
-                            <textarea class="form-control" name="message" id="message" rows="5"></textarea>
-                        </div>
+                            <div class="form-group" id="contact-message">
+                                <label for="name">Message</label>
+                                <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+                            </div>
 
-                        <button type="submit" class="btn btn-primary">Send message</button>
+                            <button type="submit" class="btn btn-primary">Send message</button>
 
+                        </form>
                     </div>
                 </div>
             </div>
