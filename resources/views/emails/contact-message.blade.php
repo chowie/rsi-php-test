@@ -1,11 +1,13 @@
 @component('mail::message')
-# Introduction
+# You have received a message from someone, somewhere in the cloud
 
-The body of your message.
+Message received from: {{ $message->name }},
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+## Their Message
+
+{{ $message->message }}
+
+You can reply to them at  {{ $message->email }}
 
 Thanks,<br>
 {{ config('app.name') }}

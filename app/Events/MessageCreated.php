@@ -27,8 +27,12 @@ class MessageCreated
      */
     public function __construct(Message $message)
     {
+        $to = [
+            'address' => config('contact.address'),
+            'name' => config('contact.name')
+        ];
         $this->message = $message;
-        //Mail::to($request->user())->send(new SendContactMessageEmail($message));
+        \Mail::send(new SendContactMessageEmail($message));
     }
 
     /**

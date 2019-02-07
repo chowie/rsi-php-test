@@ -23,10 +23,12 @@ class Message extends Model
         'created' => MessageCreated::class,
     ];
 
-    public static function created($message)
-    {
-        Mail::to($request->user())->send(new SendContactMessageEmail($message));
-    }
+    /*
+     *public static function created($message)
+     *{
+     *    Mail::to($request->user())->send(new SendContactMessageEmail($message));
+     *}
+     */
 
 
 }
