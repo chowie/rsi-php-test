@@ -14,6 +14,7 @@
 Route::get('/', 'ResumeController@show');
 
 Route::get('/contact', 'ContactFormController@show');
-Route::post('/contact', 'ContactFormController@save');
+Route::post('/contact', 'ContactFormController@save')
+    ->middleware('throttle:3,1');
 
 Route::get('/success', 'ContactFormController@success');

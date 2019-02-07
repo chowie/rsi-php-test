@@ -16,26 +16,24 @@
                         <form method="POST" action="/contact" id="contact-form">
                             @csrf
 
-                            @component('components.contact-input')
-                                name
-                            @endcomponent
+                            @component('components.contact-input', [ 'name' => 'name' ]) @endcomponent
 
-                            @component('components.contact-input', ['type' => 'email'])
-                                email
-                            @endcomponent
+                            @component('components.contact-input', ['type' => 'email', 'name' => 'email']) @endcomponent
 
                             <div class="form-group" id="contact-message">
                                 <label for="name">Message</label>
                                 <textarea
-                                       class="form-control"
+                                       class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}"
                                        name="message"
                                        id="message"
                                        autocomplete="on"
                                        autocapitalize="sentences"
                                        form="contact-form"
                                        rows="5"></textarea>
-                            </div>
 
+                                @component('components.contact-invalid-feedback', [ 'name' => 'message' ]) @endcomponent
+
+                            </div>
                             <button type="submit" class="btn btn-primary">Send message</button>
 
                         </form>

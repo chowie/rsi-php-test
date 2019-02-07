@@ -1,10 +1,12 @@
-<div class="form-group" id="contact-{{$slot}}">
-    <label for="{{$slot}}">{{ title_case($slot) }}</label>
+<div class="form-group" id="contact-{{$name}}">
+    <label for="{{$name}}">{{ title_case($name) }}</label>
     <input
-           name="{{$slot}}"
-           id="{{$slot}}"
-           class="form-control{{ $errors->has($slot->__toString()) ? ' is-invalid' : '' }}"
+           name="{{$name}}"
+           id="{{$name}}"
+           class="form-control{{ $errors->has($name) ? ' is-invalid' : '' }}"
            type="{{$type ?? 'text'}}" form="contact-form">
+
+    @component('components.contact-invalid-feedback', [ 'name' => $name ]) @endcomponent
 
 </div>
 
