@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactFormSubmission;
+
 
 class ContactFormController extends Controller
 {
@@ -11,7 +13,7 @@ class ContactFormController extends Controller
         return view('contact');
     }
 
-    public function save(Request $request)
+    public function save(ContactFormSubmission $request)
     {
         dd($request->all());
     }

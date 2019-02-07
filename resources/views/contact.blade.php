@@ -13,21 +13,27 @@
             <div class="col-lg-9 col-xs-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="/contact">
+                        <form method="POST" action="/contact" id="contact-form">
                             @csrf
-                            <div class="form-group" id="contact-name">
-                                <label for="name">Name</label>
-                                <input name="name" id="name" class="form-control" type="text">
-                            </div>
 
-                            <div class="form-group" id="contact-email">
-                                <label for="name">Email Address</label>
-                                <input name="email" id="email" class="form-control" type="text">
-                            </div>
+                            @component('components.contact-input')
+                                name
+                            @endcomponent
+
+                            @component('components.contact-input', ['type' => 'email'])
+                                email
+                            @endcomponent
 
                             <div class="form-group" id="contact-message">
                                 <label for="name">Message</label>
-                                <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+                                <textarea
+                                       class="form-control"
+                                       name="message"
+                                       id="message"
+                                       autocomplete="on"
+                                       autocapitalize="sentences"
+                                       form="contact-form"
+                                       rows="5"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Send message</button>
