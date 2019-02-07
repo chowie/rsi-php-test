@@ -18,4 +18,6 @@ mix.js('resources/js/app.js', 'public/js')
         './node_modules/jquery.easing/jquery.easing.js',
         './node_modules/startbootstrap-resume/js/resume.js'
     ], 'public/js/vendor.js')
-   .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('./node_modules/startbootstrap-resume/scss/resume.scss', 'public/css/theme.css')
+    .version();
