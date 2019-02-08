@@ -10,7 +10,7 @@ Run the following commands from your shell of choice:
 ```sh
 composer install
 
-# I build the project using yarn instead of npm
+# I built the project using yarn instead of npm
 yarn install
 
 # Build js and css assets for production. For dev environment use `dev` instead
