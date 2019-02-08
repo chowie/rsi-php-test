@@ -5,9 +5,9 @@ Message received from: {{ $message->name }},
 
 ## Their Message
 
-{{ $message->message }}
+> {{ $message->message }}
 
-You can reply to them at  {{ $message->email }}
+You can reply to them at  <{{ $message->email }}>
 
 Thanks,<br>
 {{ config('app.name') }}

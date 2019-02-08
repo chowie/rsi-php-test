@@ -10,9 +10,9 @@
             <div class="subheading mb-5">We've received your message!</div>
             <p class="lead mb-5">
                 Thanks for contacting us.  We love hearing from people like you!
-                Right, our award winning staff is reading your email and will
-                resond to as soon as humanly possible. Although, some say we respone
-                <em>inhumanly</em> fast!
+                Right now, our award winning staff is reading your email and will
+                respond to as soon as humanly possible. Although, some say we respone
+                <em>inhumanly</em> fast! <i class="fas fa-robot text-info"></i>
             </p>
         </div>
     </section>

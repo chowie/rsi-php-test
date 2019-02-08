@@ -20,9 +20,6 @@
                 <a href="https://github.com/chowie">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://twitter.com/ChrisHowie">
-                    <i class="fab fa-twitter"></i>
-                </a>
             </div>
         </div>
     </section>
