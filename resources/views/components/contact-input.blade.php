@@ -4,6 +4,7 @@
            name="{{$name}}"
            id="{{$name}}"
            class="form-control{{ $errors->has($name) ? ' is-invalid' : '' }}"
+           required
            type="{{$type ?? 'text'}}" form="contact-form">
 
     @component('components.contact-invalid-feedback', [ 'name' => $name ]) @endcomponent

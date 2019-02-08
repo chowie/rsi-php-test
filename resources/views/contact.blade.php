@@ -28,6 +28,7 @@
                                        id="message"
                                        autocomplete="on"
                                        autocapitalize="sentences"
+                                       required
                                        form="contact-form"
                                        rows="5"></textarea>
 
