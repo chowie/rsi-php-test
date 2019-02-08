@@ -7,8 +7,12 @@
             <h1 class="mb-0">Contact
                 <span class="text-primary"><i class="fas fa-at"></i> {{$result}}</span>
             </h1>
+            <div class="subheading mb-5">We've received your message!</div>
             <p class="lead mb-5">
-                We've received your message!
+                Thanks for contacting us.  We love hearing from people like you!
+                Right, our award winning staff is reading your email and will
+                resond to as soon as humanly possible. Although, some say we respone
+                <em>inhumanly</em> fast!
             </p>
         </div>
     </section>
