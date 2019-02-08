@@ -22,6 +22,15 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+window.VeeValidate = require('vee-validate');
+Vue.use(VeeValidate, {
+  classes: true,
+  classNames: {
+    valid: 'is-valid',
+    invalid: 'is-invalid'
+  }
+});
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

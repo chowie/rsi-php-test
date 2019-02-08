@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Resume - Start Bootstrap Theme</title>
 
@@ -26,11 +27,14 @@
 
     @include('components.navigation')
 
-  <div class="container-fluid p-0">
-      @yield('content')
+  <div id="app">
+      <div class="container-fluid p-0">
+          @yield('content')
+      </div>
   </div>
 
   <script src="{{url('/')}}{{mix('js/vendor.js')}}"></script>
+  <script src="{{url('/')}}{{mix('js/app.js')}}"></script>
 
 </body>
 

@@ -28,6 +28,7 @@
                                        id="message"
                                        autocomplete="on"
                                        autocapitalize="sentences"
+                                       v-validate="'required'"
                                        form="contact-form"
                                        rows="5"></textarea>
 

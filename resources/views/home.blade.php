@@ -13,6 +13,11 @@
             <p class="lead mb-5">
             Web Developer with 20 years of programming experience in a variety of environments and 6 years of web application development experience using PHP MVC frameworks.
             </p>
+
+            <div class="flex-row text-center p-2">
+                <a class="btn btn-primary btn-lg" href="{{url('/')}}/contact"><i class="fas fa-at"></i> Contact Me</a>
+            </div>
+
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/christopherhowie/">
                     <i class="fab fa-linkedin-in"></i>
@@ -21,6 +26,9 @@
                     <i class="fab fa-github"></i>
                 </a>
             </div>
+
+
+
         </div>
     </section>
 
