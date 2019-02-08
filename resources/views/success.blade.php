@@ -11,7 +11,7 @@
             <p class="lead mb-5">
                 Thanks for contacting us.  We love hearing from people like you!
                 Right now, our award winning staff is reading your email and will
-                respond to as soon as humanly possible. Although, some say we respone
+                respond to as soon as humanly possible. Although, some say we respond
                 <em>inhumanly</em> fast! <i class="fas fa-robot text-info"></i>
             </p>
         </div>
