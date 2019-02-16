@@ -38,5 +38,22 @@ Vue.use(VeeValidate, {
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        name: '',
+        email: '',
+        message: ''
+    },
+    methods: {
+        validateBeforeSubmit() {
+            console.log(this.form);
+            this.$validator.validateAll().then((result) => {
+                if (result) {
+                    document.querySelector('#contact-form').submit();
+                    return;
+                }
+
+            });
+        }
+    }
 });

@@ -13,7 +13,7 @@
             <div class="col-lg-9 col-xs-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="/contact" id="contact-form">
+                        <form method="POST" action="/contact" id="contact-form" @submit.prevent="validateBeforeSubmit">
                             @csrf
 
                             @component('components.contact-input', [ 'name' => 'name' ]) @endcomponent
@@ -28,6 +28,7 @@
                                        id="message"
                                        autocomplete="on"
                                        autocapitalize="sentences"
+                                       v-model="message"
                                        v-validate="'required'"
                                        form="contact-form"
                                        rows="5"></textarea>
