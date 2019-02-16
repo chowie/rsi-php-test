@@ -21,6 +21,13 @@ npm run prod
 sqlite3 database/database.sqlite
 ```
 
+At the sqlite prompt type the following to initialize the database:
+
+```sh
+create table messages(id integer, name text);
+.exit
+```
+
 Check your ENV settings. The `.env` file that I used is name `.env.local` and
 you will need to make a copy and call it `.env`. 
 
@@ -46,7 +53,7 @@ Once you've reviewed all of the settings, complete the setup:
 
 ```sh
 # Run migrations; _use `--force` if `APP_ENV` is production_
-php artisan migrate
+php artisan migrate refresh
 ```
 
 ```sh
