@@ -24,7 +24,7 @@ sqlite3 database/database.sqlite
 At the sqlite prompt type the following to initialize the database:
 
 ```sh
-create table messages(id integer, name text);
+create table test(id integer, name text);
 .exit
 ```
 
