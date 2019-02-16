@@ -19,10 +19,10 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/christopherhowie/">
+                <a href="https://www.linkedin.com/in/christopherhowie/" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/chowie">
+                <a href="https://github.com/chowie" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
             </div>

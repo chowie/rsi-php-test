@@ -29,7 +29,7 @@ class MessageCreated
     {
         $to = [
             'address' => config('contact.address'),
-            'name' => config('contact.name')
+            'name'    => config('contact.name')
         ];
         $this->message = $message;
         \Mail::send(new SendContactMessageEmail($message));
