@@ -100,14 +100,13 @@ export default {
                 message: this.message
             })
                 .then( data => {
-                    this.isSubmitted = true;
+                    Event.$emit('contact-form-submitted', true);
                 })
                 .catch( errors => {
 
                     console.log('Do something with the errors.', errors);
 
-                })
-                .finally( () => this.isSubmitting = false ); // hide blockui modal
+                });
 
         }
     }
