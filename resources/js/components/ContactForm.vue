@@ -11,29 +11,40 @@
             <div class="card">
                 <div class="card-body">
                     <form method="POST" action="/contact" id="contact-form" @submit.prevent="validateBeforeSubmit">
-                        @csrf
 
                         <div class="form-group" id="contact-name">
-                            <label for="name">{{ title_case($name) }}</label>
+                            <label for="name">Name</label>
                             <input
                                    name="name"
                                    id="name"
                                    class="form-control"
                                    v-model="name"
                                    v-validate="'required'"
-                                   type="{{$type ?? 'text'}}" form="contact-form">
+                                   type="text" form="contact-form">
 
-                                   @component('components.contact-invalid-feedback', [ 'name' => $name ]) @endcomponent
+                            <i v-show="errors.has('name')" class="fa fa-warning"></i>
+                            <span v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
 
                         </div>
-                        @component('components.contact-input', [ 'name' => 'name' ]) @endcomponent
+                        <div class="form-group" id="contact-email">
+                            <label for="email">Email</label>
+                            <input
+                                   name="email"
+                                   id="email"
+                                   class="form-control"
+                                   v-model="email"
+                                   v-validate="'required|email'"
+                                   type="text" form="contact-form">
 
-                        @component('components.contact-input', ['type' => 'email', 'name' => 'email']) @endcomponent
+                            <i v-show="errors.has('email')" class="fa fa-warning"></i>
+                            <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+
+                        </div>
 
                         <div class="form-group" id="contact-message">
                             <label for="name">Message</label>
                             <textarea
-                                   class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}"
+                                   class="form-control"
                                    name="message"
                                    id="message"
                                    autocomplete="on"
@@ -43,7 +54,8 @@
                                    form="contact-form"
                                    rows="5"></textarea>
 
-                            @component('components.contact-invalid-feedback', [ 'name' => 'message' ]) @endcomponent
+                            <i v-show="errors.has('message')" class="fa fa-warning"></i>
+                            <span v-show="errors.has('message')" class="help is-danger">{{ errors.first('message') }}</span>
 
                         </div>
                         <button type="submit" class="btn btn-primary">Send message</button>
@@ -59,28 +71,24 @@
 
 <script>
 export default {
-
-    props: [
-        'progress'
-    ],
-
-    data () {
-
-        return {
-            contactInfo: false
-        };
-
-    },
-
+    name: 'contact-form',
+    data: () => ({
+        name: '',
+        email: '',
+        message: ''
+    }),
     methods: {
-        emit() {
-            this.$emit('submit_contact_info',1);
+        validateBeforeSubmit() {
+            this.$validator.validateAll().then((result) => {
+                if (result) {
+                    document.querySelector('#contact-form').submit();
+                    return;
+                }
+
+            });
         }
     }
-
-}
+};
 </script>
-
-<style>
 
 
