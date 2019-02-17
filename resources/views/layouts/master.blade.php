@@ -9,7 +9,9 @@
   <meta name="author" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Resume - Start Bootstrap Theme</title>
+  <base href="{{ url('/') }}">
+
+  <title>Christopher Howie</title>
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
