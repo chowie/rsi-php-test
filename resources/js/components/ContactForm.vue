@@ -10,7 +10,7 @@
         <div class="col-lg-9 col-xs-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="/contact" id="contact-form" @submit.prevent="validateBeforeSubmit">
+                    <form id="contact-form" @submit.prevent="validateBeforeSubmit">
 
                         <div class="form-group" id="contact-name">
                             <label for="name">Name</label>
@@ -59,6 +59,11 @@
 
                         </div>
                         <button type="submit" class="btn btn-primary">Send message</button>
+                        <div class="column is-12">
+                            <p class="control">
+                            <button class="button is-primary" type="submit">Submit</button>
+                            </p>
+                        </div>
 
                     </form>
                 </div>
@@ -78,14 +83,32 @@ export default {
         message: ''
     }),
     methods: {
-        validateBeforeSubmit() {
-            this.$validator.validateAll().then((result) => {
+        validateBeforeSubmit(evt) {
+            this.$validator.validateAll().then((result,evt) => {
                 if (result) {
-                    document.querySelector('#contact-form').submit();
+                    this.postData(evt);
                     return;
                 }
 
             });
+        },
+        postData(evt) {
+
+            axios.post('/contact', {
+                name: this.name,
+                email: this.email,
+                message: this.message
+            })
+                .then( data => {
+                    this.isSubmitted = true;
+                })
+                .catch( errors => {
+
+                    console.log('Do something with the errors.', errors);
+
+                })
+                .finally( () => this.isSubmitting = false ); // hide blockui modal
+
         }
     }
 };

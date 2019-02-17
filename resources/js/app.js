@@ -45,15 +45,5 @@ const app = new Vue({
         message: ''
     },
     methods: {
-        validateBeforeSubmit() {
-            console.log(this.form);
-            this.$validator.validateAll().then((result) => {
-                if (result) {
-                    document.querySelector('#contact-form').submit();
-                    return;
-                }
-
-            });
-        }
     }
 });
