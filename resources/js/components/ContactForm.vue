@@ -59,11 +59,6 @@
 
                         </div>
                         <button type="submit" class="btn btn-primary">Send message</button>
-                        <div class="column is-12">
-                            <p class="control">
-                            <button class="button is-primary" type="submit">Submit</button>
-                            </p>
-                        </div>
 
                     </form>
                 </div>
